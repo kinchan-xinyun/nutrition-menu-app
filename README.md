@@ -1,4 +1,24 @@
-# 栄養メニュー選択アプリ - Reactファイル構成
+# 栄養メニュー選択アプリ
+
+Firebase と React を使用した栄養メニュー選択・管理アプリケーションです。
+
+## 🌐 デモ
+
+GitHub Pagesでデプロイ：
+```
+https://<あなたのGitHubユーザー名>.github.io/nutrition-menu-app/
+```
+
+デプロイ方法は [`QUICKSTART_DEPLOY.md`](./QUICKSTART_DEPLOY.md) を参照してください。
+
+## ✨ 主な機能
+
+- 📊 リアルタイム栄養計算（カロリー、タンパク質、脂質、炭水化物）
+- 🎨 PFCバランスの視覚的表示
+- 🍽️ カテゴリー別メニュー表示
+- ✅ 選択したメニューの管理
+- 🔥 Firebase Firestore によるデータ管理
+- 💾 LocalStorage による選択状態の保存
 
 ## ディレクトリ構造
 

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A nutrition menu application with Firebase integration",
   "private": true,
+  "homepage": "https://kinchan-xinyun.github.io/nutrition-menu-app",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -16,7 +17,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "browserslist": {
     "production": [
