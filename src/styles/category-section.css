@@ -1,0 +1,150 @@
+/* メニューセクション */
+.menu-section {
+    padding: 16px;
+    background: whitesmoke;
+    flex: 1;
+    position: relative;
+}
+
+.categories-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.category-arrow {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0;
+    position: relative;
+}
+
+.category-arrow::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-top: 56px solid var(--primary-green);
+    position: relative;
+    animation: arrowBounce 2s ease-in-out infinite;
+}
+
+@keyframes arrowBounce {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(4px);
+        opacity: 1;
+    }
+}
+
+.category-row {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    transition: all 0.3s ease;
+    scroll-margin-top: 100px;
+    scroll-snap-align: start;
+}
+
+.category-row.next-category {
+    border: 2px solid #6366f1;
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+    animation: highlightPulse 2s ease-in-out;
+}
+
+@keyframes highlightPulse {
+    0%, 100% { 
+        box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+    }
+    50% { 
+        box-shadow: 0 6px 24px rgba(99, 102, 241, 0.5);
+    }
+}
+
+.category-label {
+    width: 100%;
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 20px;
+    padding: 16px 0 20px 0;
+    text-align: left;
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.category-label.has-note {
+    padding-bottom: 30px;
+}
+
+.category-label-en {
+    font-family: "Montserrat", sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: var(--dark-green);
+    display: block;
+    text-align: center;
+    border-bottom: 3px solid var(--border);
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.category-label-ja {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--text-dark);
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 70px;
+    white-space: nowrap;
+    word-break: keep-all;
+    overflow-wrap: normal;
+}
+
+.category-label-note {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+    text-align: center;
+    margin-top: 40px;
+    padding: 4px 8px;
+    background: rgba(255, 193, 7, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-yellow);
+    position: relative;
+    z-index: 1;
+}
+
+/* スマホ画面でのカテゴリーラベル調整 */
+@media (max-width: 480px) {
+    .category-label-en {
+        font-size: 32px;
+        letter-spacing: 0.3px;
+    }
+    
+    .category-label-ja {
+        font-size: 16px;
+        top: 60px;
+    }
+    
+    .category-label {
+        padding-bottom: 35px;
+    }
+    
+    .category-label.has-note {
+        padding-bottom: 25px;
+    }
+}
+

@@ -1,0 +1,408 @@
+/* 料理カード/ボタン */
+.dishes-row {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 40px calc(50% - 60px) 40px calc(50% - 60px);
+    scroll-padding: 0 calc(50% - 60px);
+    scroll-snap-type: x proximity;
+}
+
+.dishes-row::-webkit-scrollbar {
+    display: none;
+}
+
+.dish-indicator {
+    display: flex !important;
+    visibility: visible !important;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 0 4px 0;
+    margin-top: -10px;
+    margin-bottom: 4px;
+    width: 100%;
+    min-height: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.dish-indicator-dot {
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 50% !important;
+    background: #ccc !important;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.dish-indicator-dot.active {
+    background: #333 !important;
+    width: 8px !important;
+    height: 8px !important;
+}
+
+.dish-button {
+    padding: 12px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background: transparent;
+    color: var(--text-dark);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    min-width: 160px;
+    max-width: 120px;
+    flex-shrink: 0;
+    touch-action: manipulation;
+    scroll-snap-align: center;
+}
+
+.dish-button-img {
+    width: 75%;
+    height: 80px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.dish-button-label-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 12px 12px 12px 12px;
+    padding: 12px 8px;
+    margin-top: -50px;
+    padding-top: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.dish-button.selected .dish-button-label-container {
+    background: #faeeb8;
+    color: var(--text-dark);
+    box-shadow: none;
+}
+
+.dish-button-label {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.4;
+    width: 100%;
+}
+
+.dish-button-calories {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2px;
+    width: 100%;
+    margin-top: 2px;
+}
+
+.dish-button-calories-value {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1;
+    color: var(--primary-green);
+}
+
+.dish-button-calories-unit {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 1;
+    color: var(--text-light);
+}
+
+.dish-button-pfc {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 10px;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.pfc-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.pfc-icon {
+    font-family: "Montserrat", sans-serif;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 900;
+    flex-shrink: 0;
+}
+
+.pfc-value-container {
+    display: flex;
+    align-items: baseline;
+    gap: 1px;
+}
+
+.pfc-value {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.pfc-unit {
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 1;
+    opacity: 0.8;
+}
+
+.pfc-item.protein-item .pfc-icon {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--protein);
+}
+
+.pfc-item.protein-item .pfc-value {
+    color: var(--protein);
+}
+
+.pfc-item.protein-item .pfc-unit {
+    color: var(--text-dark);
+}
+
+.pfc-item.fat-item .pfc-icon {
+    background: rgba(251, 191, 36, 0.15);
+    color: var(--fat);
+}
+
+.pfc-item.fat-item .pfc-value {
+    color: var(--fat);
+}
+
+.pfc-item.fat-item .pfc-unit {
+    color: var(--text-dark);
+}
+
+.pfc-item.carbs-item .pfc-icon {
+    background: rgba(34, 197, 94, 0.15);
+    color: var(--carbs);
+}
+
+.pfc-item.carbs-item .pfc-value {
+    color: var(--carbs);
+}
+
+.pfc-item.carbs-item .pfc-unit {
+    color: var(--text-dark);
+}
+
+.dish-button.selected {
+    background: #faeeb8;
+    color: var(--text-dark);
+    border: 2px solid #c3b990;
+}
+
+.dish-button.center-focused {
+    transform: scale(1.3);
+    z-index: 10;
+    margin: 0;
+}
+
+.dish-button.selected .pfc-item.protein-item .pfc-icon {
+    background: rgba(239, 68, 68, 0.2);
+    color: var(--protein);
+}
+
+.dish-button.selected .pfc-item.protein-item .pfc-value {
+    color: var(--protein);
+}
+
+.dish-button.selected .pfc-item.protein-item .pfc-unit {
+    color: var(--text-dark);
+}
+
+.dish-button.selected .pfc-item.fat-item .pfc-icon {
+    background: rgba(251, 191, 36, 0.2);
+    color: var(--fat);
+}
+
+.dish-button.selected .pfc-item.fat-item .pfc-value {
+    color: var(--fat);
+}
+
+.dish-button.selected .pfc-item.fat-item .pfc-unit {
+    color: var(--text-dark);
+}
+
+.dish-button.selected .pfc-item.carbs-item .pfc-icon {
+    background: rgba(34, 197, 94, 0.2);
+    color: var(--carbs);
+}
+
+.dish-button.selected .pfc-item.carbs-item .pfc-value {
+    color: var(--carbs);
+}
+
+.dish-button.selected .pfc-item.carbs-item .pfc-unit {
+    color: var(--text-dark);
+}
+
+.dish-button.none-button {
+    border-bottom: 1px dashed var(--border);
+    background: #fafaf7;
+    color: var(--text-light);
+}
+
+.dish-button.none-button.selected {
+    background: #d4e8c4;
+    color: var(--text-dark);
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+.dish-button.none-button.selected .pfc-item.protein-item .pfc-icon {
+    background: rgba(239, 68, 68, 0.2);
+    color: var(--protein);
+}
+
+.dish-button.none-button.selected .pfc-item.protein-item .pfc-value {
+    color: var(--protein);
+}
+
+.dish-button.none-button.selected .pfc-item.protein-item .pfc-unit {
+    color: var(--text-dark);
+}
+
+.dish-button.none-button.selected .pfc-item.fat-item .pfc-icon {
+    background: rgba(251, 191, 36, 0.2);
+    color: var(--fat);
+}
+
+.dish-button.none-button.selected .pfc-item.fat-item .pfc-value {
+    color: var(--fat);
+}
+
+.dish-button.none-button.selected .pfc-item.fat-item .pfc-unit {
+    color: var(--text-dark);
+}
+
+.dish-button.none-button.selected .pfc-item.carbs-item .pfc-icon {
+    background: rgba(34, 197, 94, 0.2);
+    color: var(--carbs);
+}
+
+.dish-button.none-button.selected .pfc-item.carbs-item .pfc-value {
+    color: var(--carbs);
+}
+
+.dish-button.none-button.selected .pfc-item.carbs-item .pfc-unit {
+    color: var(--text-dark);
+}
+
+/* 販売中止スタイル */
+.dish-button.discontinued {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(100%);
+    border: 2px dashed #ccc !important;
+}
+
+.dish-button.discontinued::after {
+    content: '販売中止';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* アクションボタンコンテナ */
+.button-actions {
+    display: flex;
+    gap: 6px;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    opacity: 1;
+}
+
+.status-button {
+    z-index: 2;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.95);
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    touch-action: manipulation;
+}
+
+.status-button:active {
+    transform: scale(0.9);
+}
+
+.discontinue-button {
+    background-color: rgba(158, 176, 185, 0.9);
+}
+
+.discontinue-button.active {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.delete-button {
+    background-color: rgba(200, 200, 200, 0.9);
+}
+
+.delete-button:active {
+    background-color: #ff6b6b;
+    color: white;
+}
+

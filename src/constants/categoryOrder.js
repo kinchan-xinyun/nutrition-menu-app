@@ -1,0 +1,1 @@
+export const categoryOrder = ['主食', '副菜', '主菜', 'SOUP', 'DRINK'];

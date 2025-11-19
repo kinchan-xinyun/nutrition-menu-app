@@ -1,0 +1,146 @@
+/* 栄養情報サマリー（固定） */
+.result-container {
+    padding: 16px;
+    background: white;
+    border-bottom: 2px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.total-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 12px;
+}
+
+.total-header h2 {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    color: var(--text-dark);
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.total-calories {
+    background: linear-gradient(135deg, var(--carbs) 0%, #4a9b65 100%);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 100px;
+    box-shadow: var(--shadow);
+}
+
+.calories-number {
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.calories-unit {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    opacity: 0.95;
+    margin-top: 2px;
+}
+
+.nutrition-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.nutrition-card {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 8px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.nutrition-card.protein-card {
+    border-color: var(--protein);
+}
+
+.nutrition-card.fat-card {
+    border-color: var(--fat);
+}
+
+.nutrition-card.carbs-card {
+    border-color: var(--carbs);
+}
+
+.nutrition-icon-protein {
+    color: var(--protein);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+.nutrition-icon-fat {
+    color: var(--fat);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+.nutrition-icon-carbs {
+    color: var(--carbs);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+.nutrition-label {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.nutrition-card.protein-card .nutrition-value {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--protein);
+    margin-bottom: 2px;
+}
+
+.nutrition-card.fat-card .nutrition-value {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--fat);
+    margin-bottom: 2px;
+}
+
+.nutrition-card.carbs-card .nutrition-value {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--carbs);
+    margin-bottom: 2px;
+}
+
+.nutrition-unit {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--text-dark);
+}
+

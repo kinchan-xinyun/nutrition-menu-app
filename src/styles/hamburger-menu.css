@@ -1,0 +1,159 @@
+/* ハンバーガーメニューボタン */
+.hamburger-menu {
+    position: sticky;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 10px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    touch-action: manipulation;
+    margin: 8px auto;
+}
+
+.hamburger-menu:hover {
+    background: #f9fafb;
+    box-shadow: var(--shadow-lg);
+}
+
+.hamburger-menu:active {
+    transform: scale(0.95);
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: var(--text-dark);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* メニューオーバーレイ */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.menu-overlay.show {
+    display: block;
+    opacity: 1;
+}
+
+.menu-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100%;
+    background: white;
+    box-shadow: -4px 0 16px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+}
+
+.menu-overlay.show .menu-content {
+    transform: translateX(0);
+}
+
+.menu-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--soft-yellow);
+}
+
+.menu-header h3 {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.menu-close {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    color: var(--text-light);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.2s;
+    touch-action: manipulation;
+}
+
+.menu-close:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--text-dark);
+}
+
+.menu-close:active {
+    transform: scale(0.9);
+}
+
+.menu-items {
+    padding: 16px 0;
+}
+
+.menu-item {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    display: block;
+    padding: 16px 20px;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    border-bottom: 1px solid var(--border);
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item:hover {
+    background: #f9fafb;
+}
+
+.menu-item:active {
+    background: #f3f4f6;
+}
+

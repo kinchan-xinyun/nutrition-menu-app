@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-green: #54af46;
+    --dark-green: #54af46;
+    --accent-yellow: #ffe15f;
+    --soft-yellow: #ffe15f;
+    --protein: #e74c3c;
+    --fat: #f1c40f;
+    --carbs: #9bcc50;
+    --bg-light: #ffffff;
+    --text-dark: #000000;
+    --text-light: #6b7280;
+    --border: #ffe15f;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+body {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900;
+    min-height: 100vh;
+    padding: 0;
+    padding-bottom: 70px;
+    color: var(--text-dark);
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    background: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+

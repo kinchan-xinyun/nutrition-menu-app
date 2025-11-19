@@ -1,0 +1,70 @@
+/* ボタンスタイル */
+.add-button {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900;
+    padding: 10px 16px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    background: var(--soft-yellow);
+    color: #92400e;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 90%;
+    margin: 8px auto;
+    touch-action: manipulation;
+    box-shadow: var(--shadow);
+}
+
+.add-button:active {
+    background: var(--accent-yellow);
+    color: white;
+    transform: scale(0.98);
+}
+
+.clear-button {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900;
+    padding: 10px 16px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    background:var(--soft-yellow);
+    color: #92400e;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 90%;
+    margin: 8px auto;
+    box-shadow: var(--shadow);
+}
+
+.clear-button::before {
+    content: '↺';
+    font-size: 18px;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.clear-button:active {
+    background: #fde68a;
+    border-color: #f59e0b;
+    transform: scale(0.95);
+    box-shadow: 0 1px 4px rgba(251, 191, 36, 0.2);
+}
+
+.clear-button.selected {
+    background: #fde68a;
+    color: #78350f;
+    border-color: #f59e0b;
+}
+

@@ -1,0 +1,139 @@
+/* 選択された料理リスト */
+.selected-dishes-list {
+    margin: 20px 0;
+    padding: 16px;
+    background: var(--dark-green);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.selected-dishes-list-title {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    border-left: 4px solid var(--border);
+    padding-left: 10px;
+}
+
+.selected-dish-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: all 0.2s ease;
+}
+
+.selected-dish-item-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--primary-green);
+    flex-shrink: 0;
+}
+
+.selected-dish-item-name {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    color: var(--text-dark);
+    flex: 1;
+}
+
+.selected-dish-delete {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: #ff4444;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(255, 68, 68, 0.3);
+}
+
+.selected-dish-delete:active {
+    transform: scale(0.9);
+    background: #cc0000;
+}
+
+.selected-dishes-images {
+    display: none;
+}
+
+.selected-dishes-images::-webkit-scrollbar {
+    display: none;
+}
+
+.selected-dish-image-wrapper {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.selected-dish-image {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--primary-green);
+    box-shadow: 0 2px 6px rgba(26, 140, 94, 0.3);
+    display: block;
+}
+
+.selected-dish-image-delete {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    background: #ff4444;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(255, 68, 68, 0.4);
+    transition: all 0.2s ease;
+}
+
+.selected-dish-image-delete:active {
+    transform: scale(0.9);
+    background: #cc0000;
+}
+
+.selected-dish-more {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+    color: white;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 2px 6px rgba(26, 140, 94, 0.3);
+    flex-shrink: 0;
+}
+
